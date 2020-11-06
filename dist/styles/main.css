@@ -1,0 +1,218 @@
+.card {
+  width: 94px;
+  height: 140px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-size: cover;
+}
+
+.card.hearts2 {
+  background-image: url("../images/hearts2.png");
+}
+
+.card.diamonds2 {
+  background-image: url("../images/diamonds2.png");
+}
+
+.card.clubs2 {
+  background-image: url("../images/clubs2.png");
+}
+
+.card.spades2 {
+  background-image: url("../images/spades2.png");
+}
+
+.card.hearts3 {
+  background-image: url("../images/hearts3.png");
+}
+
+.card.diamonds3 {
+  background-image: url("../images/diamonds3.png");
+}
+
+.card.clubs3 {
+  background-image: url("../images/clubs3.png");
+}
+
+.card.spades3 {
+  background-image: url("../images/spades3.png");
+}
+
+.card.hearts4 {
+  background-image: url("../images/hearts4.png");
+}
+
+.card.diamonds4 {
+  background-image: url("../images/diamonds4.png");
+}
+
+.card.clubs4 {
+  background-image: url("../images/clubs4.png");
+}
+
+.card.spades4 {
+  background-image: url("../images/spades4.png");
+}
+
+.card.hearts5 {
+  background-image: url("../images/hearts5.png");
+}
+
+.card.diamonds5 {
+  background-image: url("../images/diamonds5.png");
+}
+
+.card.clubs5 {
+  background-image: url("../images/clubs5.png");
+}
+
+.card.spades5 {
+  background-image: url("../images/spades5.png");
+}
+
+.card.hearts6 {
+  background-image: url("../images/hearts6.png");
+}
+
+.card.diamonds6 {
+  background-image: url("../images/diamonds6.png");
+}
+
+.card.clubs6 {
+  background-image: url("../images/clubs6.png");
+}
+
+.card.spades6 {
+  background-image: url("../images/spades6.png");
+}
+
+.card.hearts7 {
+  background-image: url("../images/hearts7.png");
+}
+
+.card.diamonds7 {
+  background-image: url("../images/diamonds7.png");
+}
+
+.card.clubs7 {
+  background-image: url("../images/clubs7.png");
+}
+
+.card.spades7 {
+  background-image: url("../images/spades7.png");
+}
+
+.card.hearts8 {
+  background-image: url("../images/hearts8.png");
+}
+
+.card.diamonds8 {
+  background-image: url("../images/diamonds8.png");
+}
+
+.card.clubs8 {
+  background-image: url("../images/clubs8.png");
+}
+
+.card.spades8 {
+  background-image: url("../images/spades8.png");
+}
+
+.card.hearts9 {
+  background-image: url("../images/hearts9.png");
+}
+
+.card.diamonds9 {
+  background-image: url("../images/diamonds9.png");
+}
+
+.card.clubs9 {
+  background-image: url("../images/clubs9.png");
+}
+
+.card.spades9 {
+  background-image: url("../images/spades9.png");
+}
+
+.card.hearts10 {
+  background-image: url("../images/hearts10.png");
+}
+
+.card.diamonds10 {
+  background-image: url("../images/diamonds10.png");
+}
+
+.card.clubs10 {
+  background-image: url("../images/clubs10.png");
+}
+
+.card.spades10 {
+  background-image: url("../images/spades10.png");
+}
+
+.card.heartsjack {
+  background-image: url("../images/heartsjack.png");
+}
+
+.card.diamondsjack {
+  background-image: url("../images/diamondsjack.png");
+}
+
+.card.clubsjack {
+  background-image: url("../images/clubsjack.png");
+}
+
+.card.spadesjack {
+  background-image: url("../images/spadesjack.png");
+}
+
+.card.heartsqueen {
+  background-image: url("../images/heartsqueen.png");
+}
+
+.card.diamondsqueen {
+  background-image: url("../images/diamondsqueen.png");
+}
+
+.card.clubsqueen {
+  background-image: url("../images/clubsqueen.png");
+}
+
+.card.spadesqueen {
+  background-image: url("../images/spadesqueen.png");
+}
+
+.card.heartsking {
+  background-image: url("../images/heartsking.png");
+}
+
+.card.diamondsking {
+  background-image: url("../images/diamondsking.png");
+}
+
+.card.clubsking {
+  background-image: url("../images/clubsking.png");
+}
+
+.card.spadesking {
+  background-image: url("../images/spadesking.png");
+}
+
+.card.heartsace {
+  background-image: url("../images/heartsace.png");
+}
+
+.card.diamondsace {
+  background-image: url("../images/diamondsace.png");
+}
+
+.card.clubsace {
+  background-image: url("../images/clubsace.png");
+}
+
+.card.spadesace {
+  background-image: url("../images/spadesace.png");
+}
+
+/*# sourceMappingURL=main.css.map */
