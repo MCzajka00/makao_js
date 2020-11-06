@@ -58,10 +58,25 @@ $cards: (
 .card {
   width: 94px;
   height: 140px;
-  margin: 10px;
+  //   margin: 10px;
   border-radius: 10px;
   border: 1px solid black;
   background-size: cover;
+}
+
+.cards {
+  position: relative;
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @for $i from 1 through 52 {
+      &:nth-child(#{$i}) {
+        left: #{$i}rem;
+        z-index: #{$i};
+      }
+    }
+  }
 }
 
 @each $card in $cards {
@@ -87,29 +102,45 @@ $cards: (
     ". player1 ."
     "player2 center player3"
     ". player4 .";
+
+  .name {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: papayawhip;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
 }
 
-.player1 {
-  grid-area: player1;
-  border: 1px solid black;
-}
+.player {
+  padding: 0.725rem;
 
-.player2 {
-  grid-area: player2;
-  border: 1px solid black;
-}
+  &.player1 {
+    grid-area: player1;
+    border: 1px solid black;
+  }
 
-.player3 {
-  grid-area: player3;
-  border: 1px solid black;
-}
+  &.player2 {
+    grid-area: player2;
+    border: 1px solid black;
+  }
 
-.player4 {
-  grid-area: player4;
-  border: 1px solid black;
+  &.player3 {
+    grid-area: player3;
+    border: 1px solid black;
+  }
+
+  &.player4 {
+    grid-area: player4;
+    border: 1px solid black;
+  }
 }
 
 .center {
   grid-area: center;
   border: 1px solid black;
 }
+
+// dokumentacja do sass, flow control na blaszke na poniedziałek
+// dokończyć htmla i css tzn wszyscy mają mieć karty (reszta zakryte) i ma mieć
+// ktoś aktiv, ma być na srodku kupka do dobierania kart
