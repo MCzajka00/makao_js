@@ -23,29 +23,29 @@ cards.forEach((card) => {
 })
 
 
-document.body.appendChild(divTag)
+// document.body.appendChild(divTag)
 
 
 
 
-const inputTag = createTag({
-tagName: "input",
-className: ["dupa", "dupa2"],
-id: "yolo",
-attrs: [{
-    name: "text",
-    value: "hello!"
-},
-{
-    name: "placeholder",
-    value: "yyy"
-}],
-evts: [{
-    type: "click",
-    cb: (evt) => {
-        console.log("it works")
-    }
-}]
-})
+// const inputTag = createTag({
+// tagName: "input",
+// className: ["dupa", "dupa2"],
+// id: "yolo",
+// attrs: [{
+//     name: "text",
+//     value: "hello!"
+// },
+// {
+//     name: "placeholder",
+//     value: "yyy"
+// }],
+// evts: [{
+//     type: "click",
+//     cb: (evt) => {
+//         console.log("it works")
+//     }
+// }]
+// })
 
-document.body.appendChild(inputTag)
+// document.body.appendChild(inputTag)

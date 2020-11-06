@@ -1,0 +1,115 @@
+@use "sass:map";
+
+$cards: (
+  "hearts2",
+  "diamonds2",
+  "clubs2",
+  "spades2",
+  "hearts3",
+  "diamonds3",
+  "clubs3",
+  "spades3",
+  "hearts4",
+  "diamonds4",
+  "clubs4",
+  "spades4",
+  "hearts5",
+  "diamonds5",
+  "clubs5",
+  "spades5",
+  "hearts6",
+  "diamonds6",
+  "clubs6",
+  "spades6",
+  "hearts7",
+  "diamonds7",
+  "clubs7",
+  "spades7",
+  "hearts8",
+  "diamonds8",
+  "clubs8",
+  "spades8",
+  "hearts9",
+  "diamonds9",
+  "clubs9",
+  "spades9",
+  "hearts10",
+  "diamonds10",
+  "clubs10",
+  "spades10",
+  "heartsjack",
+  "diamondsjack",
+  "clubsjack",
+  "spadesjack",
+  "heartsqueen",
+  "diamondsqueen",
+  "clubsqueen",
+  "spadesqueen",
+  "heartsking",
+  "diamondsking",
+  "clubsking",
+  "spadesking",
+  "heartsace",
+  "diamondsace",
+  "clubsace",
+  "spadesace"
+);
+
+.card {
+  width: 94px;
+  height: 140px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-size: cover;
+}
+
+@each $card in $cards {
+  .card.#{$card} {
+    background-image: url("../images/#{$card}.png");
+  }
+}
+
+.tableBoard {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+}
+
+.mainTable {
+  margin: auto;
+  max-width: 100vh;
+  display: grid;
+  grid-template-columns: 33.3vh 33.3vh 33.3vh;
+  grid-template-rows: 33.3vh 33.3vh 33.3vh;
+  grid-template-areas:
+    ". player1 ."
+    "player2 center player3"
+    ". player4 .";
+}
+
+.player1 {
+  grid-area: player1;
+  border: 1px solid black;
+}
+
+.player2 {
+  grid-area: player2;
+  border: 1px solid black;
+}
+
+.player3 {
+  grid-area: player3;
+  border: 1px solid black;
+}
+
+.player4 {
+  grid-area: player4;
+  border: 1px solid black;
+}
+
+.center {
+  grid-area: center;
+  border: 1px solid black;
+}
