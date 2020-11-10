@@ -55,10 +55,16 @@ $cards: (
   "spadesace"
 );
 
-.card {
-  width: 94px;
-  height: 140px;
-  //   margin: 10px;
+@each $card in $cards {
+  .card.#{$card} {
+    background-image: url("../images/#{$card}.png");
+  }
+}
+
+.card,
+.pile {
+  width: 120px;
+  height: 182px;
   border-radius: 10px;
   border: 1px solid black;
   background-size: cover;
@@ -79,9 +85,20 @@ $cards: (
   }
 }
 
-@each $card in $cards {
-  .card.#{$card} {
-    background-image: url("../images/#{$card}.png");
+.visibleCards {
+  position: relative;
+  .card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @for $i from 1 through 52 {
+      &:nth-child(#{$i}) {
+        left: 0;
+        z-index: #{$i};
+        transform: rotate($i * 10 + deg);
+        transform-origin: center center;
+      }
+    }
   }
 }
 
@@ -118,16 +135,31 @@ $cards: (
   &.player1 {
     grid-area: player1;
     border: 1px solid black;
+    .card {
+      // background-color: rgb(83, 27, 136);
+      background-image: url(../images/gray_back.png);
+      background-size: cover;
+    }
   }
 
   &.player2 {
     grid-area: player2;
     border: 1px solid black;
+    .card {
+      // background-color: rgb(83, 27, 136);
+      background-image: url(../images/gray_back.png);
+      background-size: cover;
+    }
   }
 
   &.player3 {
     grid-area: player3;
     border: 1px solid black;
+    .card {
+      // background-color: rgb(83, 27, 136);
+      background-image: url(../images/gray_back.png);
+      background-size: cover;
+    }
   }
 
   &.player4 {
@@ -139,8 +171,32 @@ $cards: (
 .center {
   grid-area: center;
   border: 1px solid black;
+  .visibleCards {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .pileOfCards {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    margin-top: 130px;
+  }
+  .pile {
+    background-image: url(../images/gray_back.png);
+    background-size: cover;
+  }
 }
 
-// dokumentacja do sass, flow control na blaszke na poniedziałek
-// dokończyć htmla i css tzn wszyscy mają mieć karty (reszta zakryte) i ma mieć
+// .pileOfCards {
+//   // width: 94px;
+//   // height: 140px;
+//   // margin: 0;
+//   display: flex;
+//   justify-content: flex-end;
+//   // align-items: flex-end;
+// }
+
+// dokumentacja do sass,
+// flow control na blaszke na poniedziałek,
+// dokończyć htmla i css tzn wszyscy mają mieć karty (reszta zakryte), ma mieć
 // ktoś aktiv, ma być na srodku kupka do dobierania kart
