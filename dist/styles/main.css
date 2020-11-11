@@ -554,9 +554,6 @@ template {
   background-size: cover;
 }
 
-.cards {
-  position: relative;
-}
 .cards .card {
   position: absolute;
   top: 0;
@@ -782,313 +779,313 @@ template {
 .visibleCards .card:nth-child(1) {
   left: 0;
   z-index: 1;
-  transform: rotate(10deg);
+  transform: rotate(15deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(2) {
   left: 0;
   z-index: 2;
-  transform: rotate(20deg);
+  transform: rotate(30deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(3) {
   left: 0;
   z-index: 3;
-  transform: rotate(30deg);
+  transform: rotate(45deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(4) {
   left: 0;
   z-index: 4;
-  transform: rotate(40deg);
+  transform: rotate(60deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(5) {
   left: 0;
   z-index: 5;
-  transform: rotate(50deg);
+  transform: rotate(75deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(6) {
   left: 0;
   z-index: 6;
-  transform: rotate(60deg);
+  transform: rotate(90deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(7) {
   left: 0;
   z-index: 7;
-  transform: rotate(70deg);
+  transform: rotate(105deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(8) {
   left: 0;
   z-index: 8;
-  transform: rotate(80deg);
+  transform: rotate(120deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(9) {
   left: 0;
   z-index: 9;
-  transform: rotate(90deg);
+  transform: rotate(135deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(10) {
   left: 0;
   z-index: 10;
-  transform: rotate(100deg);
+  transform: rotate(150deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(11) {
   left: 0;
   z-index: 11;
-  transform: rotate(110deg);
+  transform: rotate(165deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(12) {
   left: 0;
   z-index: 12;
-  transform: rotate(120deg);
+  transform: rotate(180deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(13) {
   left: 0;
   z-index: 13;
-  transform: rotate(130deg);
+  transform: rotate(195deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(14) {
   left: 0;
   z-index: 14;
-  transform: rotate(140deg);
+  transform: rotate(210deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(15) {
   left: 0;
   z-index: 15;
-  transform: rotate(150deg);
+  transform: rotate(225deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(16) {
   left: 0;
   z-index: 16;
-  transform: rotate(160deg);
+  transform: rotate(240deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(17) {
   left: 0;
   z-index: 17;
-  transform: rotate(170deg);
+  transform: rotate(255deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(18) {
   left: 0;
   z-index: 18;
-  transform: rotate(180deg);
+  transform: rotate(270deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(19) {
   left: 0;
   z-index: 19;
-  transform: rotate(190deg);
+  transform: rotate(285deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(20) {
   left: 0;
   z-index: 20;
-  transform: rotate(200deg);
+  transform: rotate(300deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(21) {
   left: 0;
   z-index: 21;
-  transform: rotate(210deg);
+  transform: rotate(315deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(22) {
   left: 0;
   z-index: 22;
-  transform: rotate(220deg);
+  transform: rotate(330deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(23) {
   left: 0;
   z-index: 23;
-  transform: rotate(230deg);
+  transform: rotate(345deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(24) {
   left: 0;
   z-index: 24;
-  transform: rotate(240deg);
+  transform: rotate(360deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(25) {
   left: 0;
   z-index: 25;
-  transform: rotate(250deg);
+  transform: rotate(375deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(26) {
   left: 0;
   z-index: 26;
-  transform: rotate(260deg);
+  transform: rotate(390deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(27) {
   left: 0;
   z-index: 27;
-  transform: rotate(270deg);
+  transform: rotate(405deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(28) {
   left: 0;
   z-index: 28;
-  transform: rotate(280deg);
+  transform: rotate(420deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(29) {
   left: 0;
   z-index: 29;
-  transform: rotate(290deg);
+  transform: rotate(435deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(30) {
   left: 0;
   z-index: 30;
-  transform: rotate(300deg);
+  transform: rotate(450deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(31) {
   left: 0;
   z-index: 31;
-  transform: rotate(310deg);
+  transform: rotate(465deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(32) {
   left: 0;
   z-index: 32;
-  transform: rotate(320deg);
+  transform: rotate(480deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(33) {
   left: 0;
   z-index: 33;
-  transform: rotate(330deg);
+  transform: rotate(495deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(34) {
   left: 0;
   z-index: 34;
-  transform: rotate(340deg);
+  transform: rotate(510deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(35) {
   left: 0;
   z-index: 35;
-  transform: rotate(350deg);
+  transform: rotate(525deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(36) {
   left: 0;
   z-index: 36;
-  transform: rotate(360deg);
+  transform: rotate(540deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(37) {
   left: 0;
   z-index: 37;
-  transform: rotate(370deg);
+  transform: rotate(555deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(38) {
   left: 0;
   z-index: 38;
-  transform: rotate(380deg);
+  transform: rotate(570deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(39) {
   left: 0;
   z-index: 39;
-  transform: rotate(390deg);
+  transform: rotate(585deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(40) {
   left: 0;
   z-index: 40;
-  transform: rotate(400deg);
+  transform: rotate(600deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(41) {
   left: 0;
   z-index: 41;
-  transform: rotate(410deg);
+  transform: rotate(615deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(42) {
   left: 0;
   z-index: 42;
-  transform: rotate(420deg);
+  transform: rotate(630deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(43) {
   left: 0;
   z-index: 43;
-  transform: rotate(430deg);
+  transform: rotate(645deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(44) {
   left: 0;
   z-index: 44;
-  transform: rotate(440deg);
+  transform: rotate(660deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(45) {
   left: 0;
   z-index: 45;
-  transform: rotate(450deg);
+  transform: rotate(675deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(46) {
   left: 0;
   z-index: 46;
-  transform: rotate(460deg);
+  transform: rotate(690deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(47) {
   left: 0;
   z-index: 47;
-  transform: rotate(470deg);
+  transform: rotate(705deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(48) {
   left: 0;
   z-index: 48;
-  transform: rotate(480deg);
+  transform: rotate(720deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(49) {
   left: 0;
   z-index: 49;
-  transform: rotate(490deg);
+  transform: rotate(735deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(50) {
   left: 0;
   z-index: 50;
-  transform: rotate(500deg);
+  transform: rotate(750deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(51) {
   left: 0;
   z-index: 51;
-  transform: rotate(510deg);
+  transform: rotate(765deg);
   transform-origin: center center;
 }
 .visibleCards .card:nth-child(52) {
   left: 0;
   z-index: 52;
-  transform: rotate(520deg);
+  transform: rotate(780deg);
   transform-origin: center center;
 }
 

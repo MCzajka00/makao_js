@@ -9,7 +9,7 @@ const cards = cardTypes.map((card) => {
     })
 }).flat()
 
-console.log(cards)
+// console.log(cards)
 
 const divTag = document.createElement("div")
 
@@ -25,27 +25,33 @@ cards.forEach((card) => {
 
 // document.body.appendChild(divTag)
 
+let indexCounter = 100
+
+const cardsHTML = document.querySelectorAll(".card")
+cardsHTML.forEach((card) => {
+    let move = false
+
+    card.addEventListener("mousedown", (e) => {
+        move = true
+        indexCounter++
+        card.style.zIndex = indexCounter
+    })
+
+    card.addEventListener("mousemove", (e) => {
+        if (move == true){
+            card.style.left = e.clientX - 50 + "px"
+            card.style.top = e.clientY - 50 + "px"
+        }
+    })
+
+    window.addEventListener("mouseup", (e) => {
+        move = false
+    })
+})
 
 
+const dragAndDropCard = () => {
 
-// const inputTag = createTag({
-// tagName: "input",
-// className: ["dupa", "dupa2"],
-// id: "yolo",
-// attrs: [{
-//     name: "text",
-//     value: "hello!"
-// },
-// {
-//     name: "placeholder",
-//     value: "yyy"
-// }],
-// evts: [{
-//     type: "click",
-//     cb: (evt) => {
-//         console.log("it works")
-//     }
-// }]
-// })
-
-// document.body.appendChild(inputTag)
+}
+// napisac funcje jesli ktos upusci karte poza swoją kupką/ poza swoimi kartami
+// to ma wrocic na swoje miejsce (twierdzenie pitagorasa?)

@@ -71,7 +71,7 @@ $cards: (
 }
 
 .cards {
-  position: relative;
+  // position: relative;
   .card {
     position: absolute;
     top: 0;
@@ -95,7 +95,7 @@ $cards: (
       &:nth-child(#{$i}) {
         left: 0;
         z-index: #{$i};
-        transform: rotate($i * 10 + deg);
+        transform: rotate($i * 15 + deg);
         transform-origin: center center;
       }
     }
