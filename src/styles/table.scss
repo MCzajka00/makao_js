@@ -61,8 +61,7 @@ $cards: (
   }
 }
 
-.card,
-.pile {
+.card {
   width: 120px;
   height: 182px;
   border-radius: 10px;
@@ -85,7 +84,7 @@ $cards: (
   }
 }
 
-.visibleCards {
+.game {
   position: relative;
   .card {
     position: absolute;
@@ -171,30 +170,21 @@ $cards: (
 .center {
   grid-area: center;
   border: 1px solid black;
-  .visibleCards {
+  .game {
     margin-top: 10px;
     margin-left: 10px;
   }
-  .pileOfCards {
+  .restOfCards {
     display: flex;
     justify-content: flex-end;
     margin-right: 10px;
     margin-top: 130px;
-  }
-  .pile {
-    background-image: url(../images/gray_back.png);
-    background-size: cover;
+    .card {
+      background-image: url(../images/gray_back.png);
+      background-size: cover;
+    }
   }
 }
-
-// .pileOfCards {
-//   // width: 94px;
-//   // height: 140px;
-//   // margin: 0;
-//   display: flex;
-//   justify-content: flex-end;
-//   // align-items: flex-end;
-// }
 
 // dokumentacja do sass,
 // flow control na blaszke na poniedziałek,
