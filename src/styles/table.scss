@@ -115,11 +115,12 @@ $cards: (
   grid-template-columns: 33.3vh 33.3vh 33.3vh;
   grid-template-rows: 33.3vh 33.3vh 33.3vh;
   grid-template-areas:
-    ". player1 ."
-    "player2 center player3"
+    ". player2 ."
+    "player1 center player3"
     ". player4 .";
 
   .name {
+    height: 20px;
     font-family: sans-serif;
     font-weight: bold;
     color: papayawhip;
@@ -185,8 +186,3 @@ $cards: (
     }
   }
 }
-
-// dokumentacja do sass,
-// flow control na blaszke na poniedziałek,
-// dokończyć htmla i css tzn wszyscy mają mieć karty (reszta zakryte), ma mieć
-// ktoś aktiv, ma być na srodku kupka do dobierania kart

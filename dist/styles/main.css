@@ -1101,9 +1101,10 @@ template {
   display: grid;
   grid-template-columns: 33.3vh 33.3vh 33.3vh;
   grid-template-rows: 33.3vh 33.3vh 33.3vh;
-  grid-template-areas: ". player1 ." "player2 center player3" ". player4 .";
+  grid-template-areas: ". player2 ." "player1 center player3" ". player4 .";
 }
 .mainTable .name {
+  height: 20px;
   font-family: sans-serif;
   font-weight: bold;
   color: papayawhip;

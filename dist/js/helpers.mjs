@@ -14,6 +14,11 @@ export const createTag = (config) => {
         tag.id = config.id
     }
 
+    if (typeof config.text !== 'undefined'){
+        const textTag = document.createTextNode(config.text)
+        tag.appendChild(textTag) 
+    }
+
     if (typeof config.attrs !== 'undefined'){
         config.attrs.forEach((attr) => {
             tag.setAttribute(attr.name, attr.value)

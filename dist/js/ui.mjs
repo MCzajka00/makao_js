@@ -1,4 +1,5 @@
 import {createTag} from './helpers.mjs';
+import {nextPlayer} from './state.mjs';
 
 const generateCard = (cardName) => {
 
@@ -15,8 +16,9 @@ const createPlayer = (config, idx) => {
         tagName: "div",
         className: ["player", `player${idx}`, config.active ? "active" : "not-active"]
     })
+    console.log(config)
     const playerNameTag = createTag({
-        tagName: "p",
+        tagName: "span",
         className: "name",
         text: config.name
     })
@@ -32,6 +34,20 @@ const createPlayer = (config, idx) => {
     })
 
     playerUi.appendChild(playerNameTag)
+
+    if (config.active){
+        const buttonTag = createTag({
+            tagName: "button",
+            className: "btn-next-player",
+            text: "Next Player",
+            evts: [{
+                type: "click",
+                cb: nextPlayer
+            }]
+        })
+        playerUi.appendChild(buttonTag)
+    }
+
     playerUi.appendChild(playerCardsTag)
 
     return playerUi
@@ -95,5 +111,22 @@ export const createMainTable = (state) => {
     return tableBoardTag
 }
 
+export const setCards = (idx) => {
+    const playerContainer = document.querySelector(`.player${idx}`);
+    const cardsToSet = playerContainer.querySelectorAll(".card")
+    const playerContainerLeft = playerContainer.offsetLeft;
+    const playerContainerTop = playerContainer.offsetTop;
+    let cardIdx = 0;
+    cardsToSet.forEach((card) => 
+    {
+        card.style.left = playerContainerLeft + cardIdx * 15 + 'px';
+        card.style.top = playerContainerTop + 30 + 'px';
+        card.startLeft = card.style.left;
+        card.startTop = card.style.top;
+        cardIdx++;
+    })
+    // console.log(cardsToSet)
+}
 
-// state to gameState
+
+// state to gameState z pliku state.mjs
