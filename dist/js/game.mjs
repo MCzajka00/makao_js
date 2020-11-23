@@ -56,14 +56,20 @@ export const reload = () => {
             const bottom = top + centerDiv.offsetHeight;
             const inBounds = e.clientX >= left && e.clientX <= right && e.clientY >= top && e.clientY <= bottom;
 
-            if (!inBounds) {
+            if (!inBounds) {   
                 card.style.left = card.startLeft
                 card.style.top = card.startTop
             } else {
                 card.style.left = left + 10 + "px"
                 card.style.top = top + 10 + "px"
+                // cardsHTML.remove(card)
+                // centerDiv.appendChild(card)
             }
+
+        // cardsHTML.remove(card)
+        // centerDiv.appendChild(card)
         })
+
     })
 
     for (let idx = 1; idx <= 4; idx++){

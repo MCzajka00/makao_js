@@ -24,7 +24,7 @@ export const gameState = {
         }
     ],
 
-    hiddenCards: ["hearts3"],
+    hiddenCards: ["hearts3", "diamondsace"],
     visibleCards: ["clubs8", "clubs9"]
 
 }
