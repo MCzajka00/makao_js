@@ -1,10 +1,10 @@
 import { createMainTable, setCards } from './ui.mjs';
-import { gameState } from './state.mjs';
+import { gameState, playCard, shuffleCards } from './state.mjs';
 
 const cardColors = ["hearts", "diamonds", "clubs", "spades"]
 const cardTypes = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
 
-const cards = cardTypes.map((card) => {
+export const cards = cardTypes.map((card) => {
     return cardColors.map((color) => {
         return color + card
     })
@@ -22,6 +22,8 @@ export const remove = () => {
 export const reload = () => {
 
     remove()
+
+    shuffleCards()
 
     document.body.appendChild(createMainTable(gameState))
 
@@ -62,12 +64,10 @@ export const reload = () => {
             } else {
                 card.style.left = left + 10 + "px"
                 card.style.top = top + 10 + "px"
-                // cardsHTML.remove(card)
-                // centerDiv.appendChild(card)
-            }
 
-        // cardsHTML.remove(card)
-        // centerDiv.appendChild(card)
+                card.classList.add("moved")
+                playCard()
+            }
         })
 
     })

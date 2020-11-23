@@ -14,7 +14,7 @@ const generateCard = (cardName) => {
 const createPlayer = (config, idx) => {
     const playerUi = createTag({
         tagName: "div",
-        className: ["player", `player${idx}`, config.active ? "active" : "not-active"]
+        className: ["player", `player${idx}`, config.active ? "active" : "not-active", config.current ? "current" : "not-active"]
     })
     console.log(config)
     const playerNameTag = createTag({

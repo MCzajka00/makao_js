@@ -1,32 +1,57 @@
-import { reload } from './game.mjs'
+import { reload, remove, cards } from './game.mjs'
+
 
 export const gameState = {
     players: [
         {
             active: false,
             name: "Rafał",
-            cards: ["spades5", "clubs4", "hearts3", "heartsqueen", "diamondsace"]
+            cards: []
         },
         {
             active: false,
             name: "Kinga",
-            cards: ["spades5", "clubs4", "hearts3", "heartsqueen", "diamondsace"]
+            cards: []
         },
         {
             active: false,
             name: "Adam",
-            cards: ["spades5", "clubs4", "hearts3", "heartsqueen", "diamondsace"]
+            cards: []
         },
         {
+            current: true,
             active: true,
             name: "Ola",
-            cards: ["diamonds5", "spades4", "hearts8", "heartsqueen", "diamondsace"]
+            cards: []
         }
     ],
 
-    hiddenCards: ["hearts3", "diamondsace"],
-    visibleCards: ["clubs8", "clubs9"]
+    hiddenCards: [],
+    visibleCards: []
 
+}
+
+
+const shuffleCard = () => {
+    const card = cards[Math.round(Math.random() * (cards.length - 1))]
+    
+    const idxOfCard = cards.indexOf(card)
+    cards.splice(idxOfCard, 1)
+
+    return card
+}
+
+
+export const shuffleCards = () => {
+    gameState.players.forEach((player) => {
+        for (let i = 0; i < 5; i++){
+            player.cards.push(shuffleCard())
+        }
+    })
+
+    for (let i = 0; i < ){
+        gameState.hiddenCards.push()
+    }
 }
 
 export const nextPlayer = () => {
@@ -41,6 +66,25 @@ export const nextPlayer = () => {
 
     reload()
 
+}
+
+const removeCard = (idxOfPlayer, idxOfCard) => gameState.players[idxOfPlayer].cards.splice(idxOfCard, 1)
+const addCardToGame = (cardName) => {
+    gameState.visibleCards.push(cardName)
+    // console.log(gameState.visibleCards)
+}
+
+export const playCard = () => {
+    const chosenCard = document.querySelector(".moved")
+
+    if (chosenCard.classList.length > 1){
+        const cardName = chosenCard.classList[1]
+        const activePlayer = gameState.players.filter((e) => e.active)[0]
+        const idxOfPlayer = gameState.players.indexOf(activePlayer)
+        const idxOfCard = gameState.players[idxOfPlayer].cards.indexOf(cardName)
+        removeCard(idxOfPlayer, idxOfCard)
+        addCardToGame(cardName)
+    }
 }
 
 // model aplikacji, to bedzie uzupełniane zanim zaczniemy grę
