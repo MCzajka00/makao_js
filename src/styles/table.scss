@@ -1,6 +1,7 @@
 @use "sass:map";
+@use "sass:list";
 
-$cards: (
+$cardsImg: (
   "hearts2",
   "diamonds2",
   "clubs2",
@@ -55,11 +56,66 @@ $cards: (
   "spadesace"
 );
 
-@each $card in $cards {
-  .card.#{$card} {
-    background-image: url("../images/#{$card}.png");
-  }
-}
+$cardsClass: (
+  "hearts_2",
+  "diamonds_2",
+  "clubs_2",
+  "spades_2",
+  "hearts_3",
+  "diamonds_3",
+  "clubs_3",
+  "spades_3",
+  "hearts_4",
+  "diamonds_4",
+  "clubs_4",
+  "spades_4",
+  "hearts_5",
+  "diamonds_5",
+  "clubs_5",
+  "spades_5",
+  "hearts_6",
+  "diamonds_6",
+  "clubs_6",
+  "spades_6",
+  "hearts_7",
+  "diamonds_7",
+  "clubs_7",
+  "spades_7",
+  "hearts_8",
+  "diamonds_8",
+  "clubs_8",
+  "spades_8",
+  "hearts_9",
+  "diamonds_9",
+  "clubs_9",
+  "spades_9",
+  "hearts_10",
+  "diamonds_10",
+  "clubs_10",
+  "spades_10",
+  "hearts_jack",
+  "diamonds_jack",
+  "clubs_jack",
+  "spades_jack",
+  "hearts_queen",
+  "diamonds_queen",
+  "clubs_queen",
+  "spades_queen",
+  "hearts_king",
+  "diamonds_king",
+  "clubs_king",
+  "spades_king",
+  "hearts_ace",
+  "diamonds_ace",
+  "clubs_ace",
+  "spades_ace"
+);
+
+// @each $card in $cardsImg {
+//   .card.#{$card} {
+//     background-image: url("../images/#{$card}.png");
+//   }
+// }
 
 .card {
   width: 120px;
@@ -101,6 +157,11 @@ $cards: (
       }
     }
   }
+  @for $i from 1 through 52 {
+    .card.#{list.nth($cardsClass, $i)} {
+      background-image: url("../images/#{list.nth($cardsImg, $i)}.png");
+    }
+  }
 }
 
 .tableBoard {
@@ -133,6 +194,14 @@ $cards: (
 
 .player {
   padding: 0.725rem;
+  &.current {
+    @for $i from 1 through 52 {
+      .card.#{list.nth($cardsClass, $i)} {
+        background-image: url("../images/#{list.nth($cardsImg, $i)}.png");
+      }
+    }
+  }
+
   &.player1 {
     grid-area: player1;
     border: 1px solid black;

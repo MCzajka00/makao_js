@@ -1,14 +1,15 @@
 import { createMainTable, setCards } from './ui.mjs';
-import { gameState, playCard, shuffleCards } from './state.mjs';
+import { gameState, playCard, shuffleCards, checkCard } from './state.mjs';
 
 const cardColors = ["hearts", "diamonds", "clubs", "spades"]
 const cardTypes = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
 
 export const cards = cardTypes.map((card) => {
     return cardColors.map((color) => {
-        return color + card
+        return color + card, color + "_" + card
     })
 }).flat()
+console.log(cards)
 
 
 export const remove = () => {
@@ -23,7 +24,6 @@ export const reload = () => {
 
     remove()
 
-    shuffleCards()
 
     document.body.appendChild(createMainTable(gameState))
 
@@ -58,26 +58,23 @@ export const reload = () => {
             const bottom = top + centerDiv.offsetHeight;
             const inBounds = e.clientX >= left && e.clientX <= right && e.clientY >= top && e.clientY <= bottom;
 
-            if (!inBounds) {   
-                card.style.left = card.startLeft
-                card.style.top = card.startTop
-            } else {
+            const canBePlayed = checkCard(card);
+            if (inBounds && canBePlayed) {
                 card.style.left = left + 10 + "px"
                 card.style.top = top + 10 + "px"
-
-                card.classList.add("moved")
-                playCard()
+                playCard(card)
+            }else {
+                card.style.left = card.startLeft;
+                card.style.top = card.startTop;
             }
+
         })
 
     })
+
+
 
     for (let idx = 1; idx <= 4; idx++){
         setCards(idx)
     }
 }
-
-// 1. player ma sie zmieniac zgodnie z kierunkiem ruchu wskazówek zegara
-// 2. karta którą położymy na srodku ma tam zostać jak zmieniamy playera tzn musimy
-// zmienic to tak, ze jak polozymy to znika ona z playera i pojawia sie
-// na srodku

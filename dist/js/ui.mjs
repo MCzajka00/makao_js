@@ -1,5 +1,5 @@
 import {createTag} from './helpers.mjs';
-import {nextPlayer} from './state.mjs';
+import {nextPlayer, getCard} from './state.mjs';
 
 const generateCard = (cardName) => {
 
@@ -73,7 +73,11 @@ const createTable = (hiddenCards, visibleCards) => {
 
     const hiddenCardsTag = createTag({
         tagName: "div",
-        className: "restOfCards"
+        className: "restOfCards",
+        evts: [{
+            type: "click",
+            cb: getCard
+        }]
     })
 
     hiddenCards.forEach((card) => {

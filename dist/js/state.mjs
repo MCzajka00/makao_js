@@ -31,6 +31,9 @@ export const gameState = {
 
 }
 
+const getActivePlayer = () => gameState.players.filter((e) => e.active)[0]
+const getActivePlayerIdx = () => gameState.players.indexOf(getActivePlayer())
+
 
 const shuffleCard = () => {
     const card = cards[Math.round(Math.random() * (cards.length - 1))]
@@ -49,15 +52,29 @@ export const shuffleCards = () => {
         }
     })
 
-    for (let i = 0; i < ){
-        gameState.hiddenCards.push()
+    gameState.visibleCards.push(shuffleCard())
+
+    const deckLen = cards.length
+
+    for (let i = 0; i < deckLen; i++){
+        gameState.hiddenCards.push(shuffleCard())
     }
 }
 
+export const getCard = () => {
+    if (getActivePlayer().current){
+        const lastCard = gameState.hiddenCards.pop()
+        getActivePlayer().cards.push(lastCard)
+
+        reload()
+    }
+}
+
+
 export const nextPlayer = () => {
     const len = gameState.players.length
-    const activePlayer = gameState.players.filter((e) => e.active)[0]
-    const idx = gameState.players.indexOf(activePlayer)
+    const activePlayer = getActivePlayer()
+    const idx = getActivePlayerIdx()
 
     const nextIdx = (idx + 1) % len
 
@@ -74,10 +91,18 @@ const addCardToGame = (cardName) => {
     // console.log(gameState.visibleCards)
 }
 
-export const playCard = () => {
-    const chosenCard = document.querySelector(".moved")
+export const checkCard = (card) => {
 
-    if (chosenCard.classList.length > 1){
+    const cardProperties = card.classList[1].split("_")
+    const visibleCardsProperties = gameState.visibleCards[gameState.visibleCards.length-1].split("_")
+    
+    return cardProperties[0] == visibleCardsProperties[0] || cardProperties[1] == visibleCardsProperties[1];
+}
+
+export const playCard = (chosenCard) => {
+    // const chosenCard = document.querySelector(".moved")
+
+    // if (chosenCard.classList.length > 1){
         const cardName = chosenCard.classList[1]
         const activePlayer = gameState.players.filter((e) => e.active)[0]
         const idxOfPlayer = gameState.players.indexOf(activePlayer)
@@ -85,6 +110,6 @@ export const playCard = () => {
         removeCard(idxOfPlayer, idxOfCard)
         addCardToGame(cardName)
     }
-}
+
 
 // model aplikacji, to bedzie uzupełniane zanim zaczniemy grę
