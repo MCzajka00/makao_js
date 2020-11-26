@@ -1,5 +1,6 @@
 import { createMainTable, setCards } from './ui.mjs';
 import { gameState, playCard, shuffleCards, checkCard } from './state.mjs';
+import { canTossCardInRow, getCardName, addCardToRound } from "./rules.mjs"
 
 const cardColors = ["hearts", "diamonds", "clubs", "spades"]
 const cardTypes = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"]
@@ -59,7 +60,9 @@ export const reload = () => {
             const inBounds = e.clientX >= left && e.clientX <= right && e.clientY >= top && e.clientY <= bottom;
 
             const canBePlayed = checkCard(card);
-            if (inBounds && canBePlayed) {
+
+            if (inBounds && canBePlayed && canTossCardInRow(getCardName(card))) {
+                addCardToRound(getCardName(card))
                 card.style.left = left + 10 + "px"
                 card.style.top = top + 10 + "px"
                 playCard(card)
@@ -67,12 +70,8 @@ export const reload = () => {
                 card.style.left = card.startLeft;
                 card.style.top = card.startTop;
             }
-
         })
-
     })
-
-
 
     for (let idx = 1; idx <= 4; idx++){
         setCards(idx)

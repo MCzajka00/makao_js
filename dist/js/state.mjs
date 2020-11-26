@@ -27,12 +27,18 @@ export const gameState = {
     ],
 
     hiddenCards: [],
-    visibleCards: []
+    visibleCards: [],
+    round: {
+        takenCard: false,
+        cards: []
+    }
 
 }
 
-const getActivePlayer = () => gameState.players.filter((e) => e.active)[0]
-const getActivePlayerIdx = () => gameState.players.indexOf(getActivePlayer())
+export const functionalCards = ["2", "3", "4", "jack", "king", "ace"]
+
+export const getActivePlayer = () => gameState.players.filter((e) => e.active)[0]
+export const getActivePlayerIdx = () => gameState.players.indexOf(getActivePlayer())
 
 
 const shuffleCard = () => {
@@ -88,7 +94,6 @@ export const nextPlayer = () => {
 const removeCard = (idxOfPlayer, idxOfCard) => gameState.players[idxOfPlayer].cards.splice(idxOfCard, 1)
 const addCardToGame = (cardName) => {
     gameState.visibleCards.push(cardName)
-    // console.log(gameState.visibleCards)
 }
 
 export const checkCard = (card) => {

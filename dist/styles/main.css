@@ -1250,7 +1250,8 @@ template {
   border: 1px solid black;
 }
 
-.btn-next-player {
+.btn-next-player,
+.btn-undo {
   margin-bottom: 0.75rem;
   margin-left: 0.5rem;
   border-radius: 0.25rem;
