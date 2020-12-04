@@ -1,5 +1,6 @@
 import { reload, remove, cards } from './game.mjs'
-import { removeCardsFromRound } from "./rules.mjs"
+import { removeCardsFromRound, canTakeCard, isJack } from "./rules.mjs"
+import { modalColor } from "./ui.mjs"
 
 
 
@@ -33,8 +34,11 @@ export const gameState = {
     round: {
         takenCard: false,
         cards: []
-    }
+    },
 
+    condition: false,
+    rules: []
+//TODO zreimplementowac modal zeby byl generowany na podstawie state + modal do figur + jeden rule do kart funkcyjnych
 }
 
 export const functionalCards = ["2", "3", "4", "jack", "king", "ace"]
@@ -82,15 +86,19 @@ export const getCard = () => {
 export const nextPlayer = () => {
     const roundLen = gameState.round.cards.length
     if (roundLen === 0 || roundLen === 1 || roundLen ===3 || roundLen === 4){
-        const len = gameState.players.length
-        const activePlayer = getActivePlayer()
-        const idx = getActivePlayerIdx()
-        gameState.round.cards.forEach((card) => playCard(card))
-    
-        const nextIdx = (idx + 1) % len
 
-        activePlayer.active = false
-        gameState.players[nextIdx].active = true
+        if (isJack()) {
+            document.body.appendChild(modalColor())
+        }
+        // const len = gameState.players.length
+        // const activePlayer = getActivePlayer()
+        // const idx = getActivePlayerIdx()
+        // gameState.round.cards.forEach((card) => playCard(card))
+    
+        // const nextIdx = (idx + 1) % len
+
+        // activePlayer.active = false
+        // gameState.players[nextIdx].active = true
     
         removeCardsFromRound()
         reload()

@@ -8,6 +8,12 @@ const isEndGame = () => {
 
     return true
 }
+ 
+const getCardColor = (card) => {
+    return card.split("_")[0]
+}
+
+export const getCardFigure = (card) => card.split("_")[1]
 
 const checkColor = (topCard, movedCard) => {
    return topCard.split("_")[0] === movedCard.split("_")[0]
@@ -28,9 +34,14 @@ const resetRound = () => {
     }
 }
 
-const canTossCard = () => !gameState.round.takenCard
+export const isJack = () => {
+    console.log(gameState.round)
+    return getCardFigure(gameState.round.cards[0]) === "jack"
+}
 
-const canTakeCard = () => gameState.round.cards.length === 0
+export const canTossCard = () => !gameState.round.takenCard
+
+export const canTakeCard = () => gameState.round.cards.length === 0
 
 const takeCard = () => gameState.rount.takenCard = true
 

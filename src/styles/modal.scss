@@ -1,0 +1,47 @@
+.modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    padding: 1rem;
+    .close-btn {
+      height: 30px;
+      width: 30px;
+      align-self: flex-end;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+    .cards-color {
+      .card-color {
+        cursor: pointer;
+        width: 6rem;
+        height: 6.5rem;
+        overflow: hidden;
+        background-image: url("../images/cardsColor.png");
+        background-size: 200%;
+        &:nth-child(1) {
+          background-position: right top;
+        }
+        &:nth-child(2) {
+          background-position: left top;
+        }
+        &:nth-child(3) {
+          background-position: right bottom;
+        }
+        &:nth-child(4) {
+          background-position: left bottom;
+        }
+      }
+    }
+  }
+}

@@ -118,6 +118,57 @@ const createTable = (hiddenCards, visibleCards) => {
     return tableTag
 }
 
+export const modalColor = () => {
+    const modalWrapperTag = createTag({
+        tagName: "div",
+        className: "modal-wrapper"
+    })
+
+    const modalTag = createTag({
+        tagName: "div",
+        className: "modal"
+    })
+
+    modalWrapperTag.appendChild(modalTag)
+
+    const closeBtnTag = createTag({
+        tagName:"button",
+        className: "close-btn",
+        text: "x",
+        evts: [{
+            type: "click",
+            cb: () => modalWrapperTag.remove()
+        }]
+    })
+
+    modalTag.appendChild(closeBtnTag)
+
+    const cardsColorTag = createTag({
+        tagName: "div",
+        className: "cards-color"
+    })
+    modalTag.appendChild(cardsColorTag)
+
+    const colorOfCard = ["hearts", "spades", "clubs", "diamonds"]
+
+    colorOfCard.forEach((color) => {
+        const cardColorTag = createTag({
+            tagName: "button",
+            className: ["card-color", color],
+            evts: [{
+                type: "click",
+                cb: () => {
+                    console.log(color)
+                    modalWrapperTag.remove()
+                }
+            }]
+        })
+        cardsColorTag.appendChild(cardColorTag)
+    })
+
+    return modalWrapperTag
+}
+
 export const createMainTable = (state) => {
     const tableBoardTag = createTag({
         tagName: "section",

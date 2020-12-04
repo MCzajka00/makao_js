@@ -1280,4 +1280,50 @@ template {
   background-size: cover;
 }
 
+.modal-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-wrapper .modal {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  padding: 1rem;
+}
+.modal-wrapper .modal .close-btn {
+  height: 30px;
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.modal-wrapper .modal .cards-color .card-color {
+  cursor: pointer;
+  width: 6rem;
+  height: 6.5rem;
+  overflow: hidden;
+  background-image: url("../images/cardsColor.png");
+  background-size: 200%;
+}
+.modal-wrapper .modal .cards-color .card-color:nth-child(1) {
+  background-position: right top;
+}
+.modal-wrapper .modal .cards-color .card-color:nth-child(2) {
+  background-position: left top;
+}
+.modal-wrapper .modal .cards-color .card-color:nth-child(3) {
+  background-position: right bottom;
+}
+.modal-wrapper .modal .cards-color .card-color:nth-child(4) {
+  background-position: left bottom;
+}
+
 /*# sourceMappingURL=main.css.map */
