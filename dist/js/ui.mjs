@@ -1,11 +1,27 @@
 import {createTag} from './helpers.mjs';
-import {nextPlayer, getCard} from './state.mjs';
+import {nextPlayer, getCard, undoCards} from './state.mjs';
 
 const generateCard = (cardName) => {
 
     return createTag({
         tagName: "div",
         className: ["card", cardName]
+    })
+}
+
+export const setCards = (idx) => {
+    const playerContainer = document.querySelector(`.player${idx}`);
+    const cardsToSet = playerContainer.querySelectorAll(".card")
+    const playerContainerLeft = playerContainer.offsetLeft;
+    const playerContainerTop = playerContainer.offsetTop;
+    let cardIdx = 0;
+    cardsToSet.forEach((card) => 
+    {
+        card.style.left = playerContainerLeft + cardIdx * 15 + 'px';
+        card.style.top = playerContainerTop + 30 + 'px';
+        card.startLeft = card.style.left;
+        card.startTop = card.style.top;
+        cardIdx++;
     })
 }
 
@@ -52,7 +68,7 @@ const createPlayer = (config, idx) => {
             text: "Undo",
             evts: [{
                 type: "click",
-                cb: nextPlayer
+                cb: undoCards
             }]
         })
 
@@ -127,22 +143,6 @@ export const createMainTable = (state) => {
     return tableBoardTag
 }
 
-export const setCards = (idx) => {
-    const playerContainer = document.querySelector(`.player${idx}`);
-    const cardsToSet = playerContainer.querySelectorAll(".card")
-    const playerContainerLeft = playerContainer.offsetLeft;
-    const playerContainerTop = playerContainer.offsetTop;
-    let cardIdx = 0;
-    cardsToSet.forEach((card) => 
-    {
-        card.style.left = playerContainerLeft + cardIdx * 15 + 'px';
-        card.style.top = playerContainerTop + 30 + 'px';
-        card.startLeft = card.style.left;
-        card.startTop = card.style.top;
-        cardIdx++;
-    })
-    // console.log(cardsToSet)
-}
 
 
 // state to gameState z pliku state.mjs

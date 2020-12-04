@@ -1,4 +1,6 @@
 import { reload, remove, cards } from './game.mjs'
+import { removeCardsFromRound } from "./rules.mjs"
+
 
 
 export const gameState = {
@@ -78,17 +80,29 @@ export const getCard = () => {
 
 
 export const nextPlayer = () => {
-    const len = gameState.players.length
-    const activePlayer = getActivePlayer()
-    const idx = getActivePlayerIdx()
+    const roundLen = gameState.round.cards.length
+    if (roundLen === 0 || roundLen === 1 || roundLen ===3 || roundLen === 4){
+        const len = gameState.players.length
+        const activePlayer = getActivePlayer()
+        const idx = getActivePlayerIdx()
+        gameState.round.cards.forEach((card) => playCard(card))
+    
+        const nextIdx = (idx + 1) % len
 
-    const nextIdx = (idx + 1) % len
+        activePlayer.active = false
+        gameState.players[nextIdx].active = true
+    
+        removeCardsFromRound()
+        reload()
+    } else {
+        undoCards()
+    }
+}
 
-    activePlayer.active = false
-    gameState.players[nextIdx].active = true
-
+export const undoCards = () => {
+    
+    gameState.round.cards.forEach((card) => removeCardsFromRound(card))
     reload()
-
 }
 
 const removeCard = (idxOfPlayer, idxOfCard) => gameState.players[idxOfPlayer].cards.splice(idxOfCard, 1)
@@ -105,10 +119,7 @@ export const checkCard = (card) => {
 }
 
 export const playCard = (chosenCard) => {
-    // const chosenCard = document.querySelector(".moved")
 
-    // if (chosenCard.classList.length > 1){
-        const cardName = chosenCard.classList[1]
         const activePlayer = gameState.players.filter((e) => e.active)[0]
         const idxOfPlayer = gameState.players.indexOf(activePlayer)
         const idxOfCard = gameState.players[idxOfPlayer].cards.indexOf(cardName)

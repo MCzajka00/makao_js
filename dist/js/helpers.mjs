@@ -31,8 +31,5 @@ export const createTag = (config) => {
         })
     }
 
-    
-
-
     return tag
 }

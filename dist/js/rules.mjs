@@ -19,7 +19,7 @@ const checkFigure = (topCard, movedCard) => {
 
 export const getCardName = (card) => card.classList[1]
 
-const checkIfCardIsFunctional = (card) => functionalCards.includes( card.split("_")[1])
+const checkIfCardIsFunctional = (card) => functionalCards.contains( card.split("_")[1])
 
 const resetRound = () => {
     gameState.round = {
@@ -38,6 +38,10 @@ export const addCardToRound = (card) => {
     gameState.round.cards.push(card)
 }
 
+export const removeCardsFromRound = () => {
+    gameState.round.cards = []
+}
+
 export const canTossCardInRow = (card) => {
     console.log(card)
     if (gameState.round.cards.length === 0) {
@@ -48,6 +52,7 @@ export const canTossCardInRow = (card) => {
     
     const lastCard = gameState.round.cards[gameState.round.cards.length - 1]
     console.log(checkFigure(lastCard, card))
+    console.log(gameState.round.cards)
     return checkFigure(lastCard, card)
 }
 

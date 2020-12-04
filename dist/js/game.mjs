@@ -32,8 +32,9 @@ export const reload = () => {
 
     const cardsHTML = document.querySelectorAll(".active .card")
 
+    let move = false;
+
     cardsHTML.forEach((card) => {
-        let move = false
         card.startLeft = card.style.left
         card.startTop = card.style.top
 
@@ -65,7 +66,7 @@ export const reload = () => {
                 addCardToRound(getCardName(card))
                 card.style.left = left + 10 + "px"
                 card.style.top = top + 10 + "px"
-                playCard(card)
+                // playCard(card)
             }else {
                 card.style.left = card.startLeft;
                 card.style.top = card.startTop;
